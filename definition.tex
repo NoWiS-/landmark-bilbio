@@ -1,0 +1,81 @@
+\section{Définitions}
+  \subsection{Landmark}
+\begin{frame}
+	\frametitle{Landmark}
+
+  \begin{definition}[Landmark]
+    Soit $(A, I, G)$ une tâche de planification. Un fluent $L$ est un landmark si
+    $\forall P = \langle a_1,~\dots~, a_n\rangle \in A^*, G \subset Result(I, P)$
+    $(\exists i \in \{1,~\dots~,n\})~~L \in Result(I, \langle a_1, \dots, a_i  \rangle)$
+  \end{definition}
+
+  \begin{block}{C'est-à-dire}
+    $L$ appartient à au moins un état de tous les plans permettant d'aller de l'état initial $I$ à l'état but $G$.
+  \end{block}
+\end{frame}
+
+  \subsection{Ordres}
+\begin{frame}
+  \frametitle{Necessary Order}
+
+  \begin{definition}[$L \rightarrow_{n} L'$]
+    Soient $(A, I, G)$ une tâche de planification et deux landmarks $L$ et $L'$. On dit qu'il existe un necessary order entre $L$ et $L'$ ($L \rightarrow_{n} L'$) si et seulement si\\
+    $L' \notin  I$ et $\forall P = \langle a_1,~\dots~, a_n\rangle \in A^*, L' \in Result(I, P)$
+    $L \in Result(I, \langle a_1,~\dots~, a_{n-1}\rangle)$
+  \end{definition}
+
+  \begin{block}{C'est-à-dire}
+    Pour toutes les séquences d'actions qui amènent à un état contenant $L'$, l'avant dernier état contient nécessairement $L$.
+  \end{block}
+\end{frame}
+
+%  \subsection{Greedy Necessary Order}
+\begin{frame}
+  \frametitle{Greedy Necessary}
+
+  \begin{definition}[$L \rightarrow_{gn} L'$]
+     Soient $(A, I, G)$ une tâche de planification et deux landmarks $L$ et $L'$. On dit qu'il existe un greedy necessary order entre $L$ et $L'$ ($L \rightarrow_{gn} L'$) si et seulement si\\
+    $L' \notin  I$ et $\forall P = \langle a_1,~\dots~, a_n\rangle \in A^*, L' \in Result(I, P)$ et $(\forall i \in \{1,~\dots~, n-1\}) L' \notin Result(I, \langle a_1,~\dots~,a_i\rangle)$
+    $L \in Result(I, \langle a_1,~\dots~, a_{n-1}\rangle)$
+  \end{definition}
+
+  \begin{block}{C'est-à-dire}
+    Pour toutes les séquences d'actions qui amènent pour la première fois à un état contenant $L'$, l'avant dernier état contient nécessairement $L$.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Reasonable order}
+
+  \begin{definition}[$S_{(L',\lnot L)}$]
+    $S_{(L',\lnot L)}$ est l'ensemble de tout les états où $L'$ vient d'être ajouté mais où $L$ n'est jamais encore apparu.
+  \end{definition}
+
+  \begin{definition}[Aftermath]
+    $L'$ est un effet/une suite (in the aftermath) de $L$ si depuis tous les $s \in S_{(L', \lnot L)}$, $L$ devient vrai dans tous les plans solutions $P \in A^* G \in Result(P, s)$.
+  \end{definition}
+
+  \begin{definition}[$L \rightarrow_r L'$]
+    On dit que  $L \rightarrow_r L'$ si
+    \begin{equation*}
+      \begin{cases}
+        L'~\text{est un effet de}~L\\
+        (\forall s \in S_{(L', \lnot L)})(\forall P \in A^*~\text{achevant}~L) P~\text{supprime nécessairement}~L'
+      \end{cases}
+    \end{equation*}
+  \end{definition}
+\end{frame}
+
+  \subsection{Complexité}
+\begin{frame}
+  \frametitle{Complexité}
+  \begin{block}{}
+    \begin{itemize}
+      \item Landmark -- PSPACE-complete
+      \item $\rightarrow_n$ -- PSPACE-complete
+      \item $\rightarrow_{gn}$ -- PSPACE-complete
+      \item $\rightarrow_{r}$ -- PSPACE-complete
+    \end{itemize}
+  \end{block}
+\end{frame}
+
