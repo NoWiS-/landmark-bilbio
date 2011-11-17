@@ -52,7 +52,7 @@
   \end{definition}
 
   \begin{definition}[Aftermath]
-    $L'$ est un effet/une suite (in the aftermath) de $L$ si depuis tous les $s \in S_{(L', \lnot L)}$, $L$ devient vrai dans tous les plans solutions $P \in A^* G \in Result(P, s)$.
+    $L'$ est un effet/une suite (in the aftermath) de $L$ si depuis tous les $s \in S_{(L', \lnot L)}$, $L$ devient vrai dans tous les plans solutions $P \in A^*~\text{tel que}~G\in Result(P, s)$.
   \end{definition}
 
   \begin{definition}[$L \rightarrow_r L'$]
@@ -66,10 +66,31 @@
   \end{definition}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Reasonable order}
+
+%  \begin{warning}{}
+%    Un ordre $L \rightarrow_r L'$ ne veut pas dire qu'il faut absolument obtenir $L$ avant $L'$ mais que ça semble raisonnable.
+%
+%    En effet, on pourrait être obligé de détruire $L'$ pour construire $L$.
+%  \end{warning}
+\end{frame}
+  
+
+\begin{frame}
+  \frametitle{Obedient Reasonable Orders}
+
+  \begin{example}
+    Si on a $L' \rightarrow_n L''$, $L \rightarrow_r L''$ et que les seules actions permettant de produire $L$ détruisent $L'$.
+
+    \colorbox{red}{TODO}
+  \end{example}
+\end{frame}
+
   \subsection{Complexité}
 \begin{frame}
   \frametitle{Complexité}
-  \begin{block}{}
+  \begin{block}{Décidabilité}
     \begin{itemize}
       \item Landmark -- PSPACE-complete
       \item $\rightarrow_n$ -- PSPACE-complete
