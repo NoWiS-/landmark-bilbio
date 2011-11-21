@@ -1,13 +1,22 @@
+% !TEX encoding = UTF-8 Unicode
+% % !TEX TS-program = LuaLaTeX
 \documentclass{beamer}
 
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{luatextra}
+
 \usepackage[francais]{babel}
+
 \usepackage[ruled, vlined]{lib/algorithm2e}
+\usepackage{tikz}
+\usepackage{tkz-graph}
+
 
 %\usetheme{Warsaw}
 \usetheme{Frankfurt}
 \usecolortheme{seahorse}
 %\usecolortheme{beaver}
+
 
 \setbeamercovered{transparent}
 \setbeamertemplate{footline}{
@@ -26,6 +35,7 @@
 	}%
 	\vskip0pt%
 }
+
 
 %Les symboles de la barre de navigation
 \setbeamertemplate{navigation symbols}{%
@@ -51,6 +61,8 @@
 \date{\oldstylenums{\today}}
 \logo{\includegraphics[width=.25\textwidth]{images/onera.jpg}}
 
+
+%% --- START OF THE DOCUMENT ---
 \begin{document}
 	\begin{frame}
 		\titlepage
@@ -63,6 +75,6 @@
 
   \input{definition}
   \input{algos}
-
+  \input{utilisation}
 \end{document}
 

@@ -1,3 +1,4 @@
+LATEX = lualatex
 SRCS = *.tex
 NAME = presentation
 BIN = $(NAME).pdf
@@ -9,10 +10,8 @@ all: build run
 .PHONY: default build clean mrproper run
 
 build: $(SRCS)
-	pdflatex $(NAME)
-	#bibtex $(NAME)
-	#pdflatex $(NAME)
-	pdflatex $(NAME)
+	$(LATEX) $(NAME)
+	$(LATEX) $(NAME)
 
 run: build
 	evince $(BIN)
