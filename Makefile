@@ -9,7 +9,7 @@ HOFFMANN_SRC = $(wildcard $(HOFFMANN)/*.tex)
 DOMSHLAK_IJCAI_SRC = $(wildcard $(DOMSHLAK_IJCAI)/*.tex)
 DISCUSSION_SRC = $(wildcard $(DISCUSSION)/*.tex)
 
-.PHONY: default build clean mrproper run
+.PHONY: citation default build clean mrproper run
 
 default: $(DOMSHLAK_IJCAI)
 	@make -s clean
@@ -34,6 +34,10 @@ $(DOMSHLAK_IJCAI).pdf: $(DOMSHLAK_IJCAI).tex $(DOMSHLAK_IJCAI_SRC)
 $(DISCUSSION).pdf: $(DISCUSSION).tex $(DISCUSSION_SRC)
 	$(LATEX) $<
 	$(LATEX) $<
+
+citation:
+	@cd create_bib && ./create_tex_files.sh ../bib.bib ../cite && cd ..
+	@rm -f create_bib/__bib*
 
 run: $(HOFFMANN) $(DOMSHLAK_IJCAI) $(DISCUSSION)
 	evince $(HOFFMANN).pdf $(DOMSHLAK_IJCAI).pdf $(DISCUSSION).pdf

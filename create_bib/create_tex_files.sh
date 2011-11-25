@@ -67,7 +67,7 @@ done < "$TMP_TEX.bbl";
 echo_bibitem "$tmp" "$OUTPUT/$name"
 head -n-1 "$OUTPUT/${name}.tex" > __dummy__.tex
 mv __dummy__.tex "$OUTPUT/${name}.tex"
-#rm -f "$OUTPUT/__dummy__.tex"
+rm -f "$OUTPUT/__dummy__.tex"
 
 exit 0
 
