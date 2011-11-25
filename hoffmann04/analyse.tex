@@ -1,0 +1,51 @@
+\section{Analyse}
+  \subsection*{Résumé}
+
+\begin{frame}
+  \begin{block}{Landmark}
+    \begin{itemize}
+      \item LM = Fluent qui doit être vrai dans tous les plans
+      \item Recherche complète et ordre difficile (PSPACE)
+      \item Mais points clé pour la recherche de plan.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Pseudo-Landmark}
+    \begin{itemize}
+      \item recherche de landmark à partir des buts
+      \item Si $L$ est un LM et que toutes qui actions qui produisent $L$ ont $L'$ en précondition alors $L'$ est un LM.
+      \item Approximation avec un RPG.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Utilisation}
+    \item Découpage en sous tâches
+    \item Utilisation de planners pour résoudres ces sous tâches
+  \end{block}
+\end{frame}
+
+  \subsection*{Analyse}
+
+\begin{frame}
+  \begin{block}{}
+    Sur certaines instances (S'il n'y a pas de précondition partagé), la décomposition permet juste de faire achever les buts les uns après les autres (peu de landmarks sont détecté).
+  \end{block}
+  
+  \begin{block}{}
+    Implémentation sur FF plutôt efficace (plus d'instance résolu et généralement plus rapidement). Mais donne dans certains cas de moins bonne solutions.
+
+    Implémentation sur LPG peu efficace. (re-run des pre-process de LPG à chaque sous problème).
+  \end{block}
+
+  \begin{block}{}
+    \begin{itemize}
+      \item souvent plus rapide
+      \item recherche très locale
+      \item plan parfois plus long
+      \item non complet
+    \end{itemize}
+  \end{block}
+\end{frame}
+

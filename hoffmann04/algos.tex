@@ -1,0 +1,72 @@
+\section{Algorithmes}
+  \subsection{Landmark}
+\begin{frame}
+  \frametitle{Landmark}
+
+  \begin{block}{}
+    En utilisant un graphe de planification relaxé (RPG), on construit un graphe de génération de landmark.
+    On part des buts, et on remonte.
+  \end{block}
+
+  \begin{block}{}
+    \begin{algorithm*}[H]
+      \tiny
+      \caption{ Landmark Generation Graph}
+      
+      \SetKwInOut{Input}{input}
+      \SetKwInOut{Output}{output}
+      
+      \Input{$(A, O, I, G)$ a planning task}
+      \Output{LGG = (N, E) où N est l'ensemble des noeuds, et E les arcs de l'arbre}
+     
+      $LGG = (N, E) \leftarrow (G, \emptyset)$\;
+      $C \leftarrow G$\;
+      \While{$C \ne \emptyset$}{
+        $C' \leftarrow \emptyset$\;
+        \ForEach{$(L' \in C)$ tel que $level(L') \ne \emptyset$}{
+          $A \leftarrow \{(\forall a \in A)~|~L' \in add(a)~\text{et}~level(a) = level(L) - 1\}$\;
+          \ForEach{$L$ tel que $(\forall a \in A)~L \in pre(a)$}{
+            \uIf{$(L \in O) \notin LGG$}{
+              $C' \leftarrow C' \cup \{L\}$\;
+              Insérer $L$ dans LGG\;
+            }
+            \lIf{$L \rightarrow_{gn} L' \notin LGG$}{
+              Insérer $L \rightarrow_{gn} L'$ dans LGG\;
+            }
+          }
+        }
+        $C \leftarrow C'$
+      }
+    \end{algorithm*}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{}
+    On obtient pas forcément des landmarks ! (à cause de du test level RPG, ça enlève les actions non présente dans le RPG).
+    En fait, ça permet d'obtenir des pseudo-landmarks (il y en a plus). Pour une recheche heuristique, ça aide (mais est-ce que ça apporte vraiment plus qu'un simple RPG ?).
+  \end{block}
+\end{frame}
+
+  \subsection{Ordres}
+
+\begin{frame}
+  \frametitle{$L \rightarrow_r L'$}
+
+  \begin{block}{}
+    Interférence entre 2 landmarks (en gros, des mutexes)
+  \end{block}
+
+  \alt<1>{
+    \begin{block}{}
+      \input{hoffmann04/aro}
+    \end{block}
+  }
+
+  \alt<2>{
+    \begin{block}{}
+      \input{hoffmann04/aro2}
+    \end{block}
+  }
+
+\end{frame}

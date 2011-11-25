@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+	\SetVertexNormal[LineColor=brown]
+
+	\Vertex[x=4,y=4]{L}
+	\Vertex[x=0,y=2]{L'}
+	\Vertex[x=4,y=2]{A}
+	\Vertex[x=2,y=0]{B}
+
+%	\tikzset{EdgeStyle/.style={->,relative=false,in=90,out=60}}
+  \tikzset{EdgeStyle/.style = {->}}
+  \Edge[label=gn](A)(B)
+	\Edge[label=gn](L')(B)
+	\Edge[label=Path](L)(A)
+  
+  \tikzset{EdgeStyle/.style = {->}}
+	\Edge[label=r](L)(L')
+\end{tikzpicture}

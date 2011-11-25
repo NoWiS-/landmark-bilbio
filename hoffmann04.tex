@@ -1,0 +1,79 @@
+\documentclass{beamer}
+
+%\usepackage[utf8]{inputenc}
+\usepackage{luatextra}
+
+\usepackage[francais]{babel}
+
+\usepackage[ruled, vlined]{lib/algorithm2e}
+\usepackage{tikz}
+\usepackage{lib/tkz-graph}
+
+
+%\usetheme{Warsaw}
+\usetheme{Frankfurt}
+\usecolortheme{seahorse}
+%\usecolortheme{beaver}
+
+
+\setbeamercovered{transparent}
+\setbeamertemplate{footline}{
+\leavevmode%
+\hbox{\hspace*{-0.075cm}
+	\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+		\usebeamerfont{author in head/foot}Simon Vernhes
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{subsection in head/foot}%
+		\usebeamerfont{title in head/foot}\insertshorttitle
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{subsection in head/foot}%
+		\usebeamerfont{section in head/foot}
+		\insertframenumber{} / \inserttotalframenumber
+	\end{beamercolorbox}
+	}%
+	\vskip0pt%
+}
+
+
+%Les symboles de la barre de navigation
+\setbeamertemplate{navigation symbols}{%
+	%\insertslidenavigationsymbol
+	%\insertframenavigationsymbol
+	%\insertsubsectionnavigationsymbol
+	%\insertsectionnavigationsymbol
+	%\insertdocnavigationsymbol
+	%\insertbackfindforwardnavigationsymbol
+}
+
+%Rappel du plan au début de chaque section
+\AtBeginSection[]{
+	\begin{frame}{\insertsectionhead}
+		\small{\tableofcontents[currentsection, hideothersubsections]}
+	\end{frame} 
+}
+
+\title{Landmarks — Bibiliograhie (Landmark Ordering)}
+\subtitle{\footnotesize DCSD/CD}
+\author{{\Large Simon \textsc{Vernhes}}}
+\institute{\textsc{{\large Onera}}}
+\date{\oldstylenums{\today}}
+\logo{\includegraphics[width=.25\textwidth]{images/onera.jpg}}
+
+
+%% --- START OF THE DOCUMENT ---
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Sommaire}
+		\small \tableofcontents
+	\end{frame}
+
+  \input{hoffmann04/definition}
+  \input{hoffmann04/algos}
+  \input{hoffmann04/utilisation}
+  \input{hoffmann04/analyse}
+\end{document}
+

@@ -1,0 +1,30 @@
+\section{Utilisation}
+  \subsection*{Utilisation}
+
+\begin{frame}
+
+  \begin{block}{}
+    Interdiction des actions qui ajoute un landmark qui a des arcs entrants.
+    \input{cite/Porteous}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Décomposions en sous tâches}
+
+  \begin{block}{}
+    Appeler successivement un planification avec comme but : le but du problème ou la disjonction des prochains landmark.
+
+    Dès qu'il termine, s'il n'a pas atteint le but, on le fait repartir de l'état final de la même manière.
+
+    Et on itère jusqu'à avoir atteint le but.
+
+    \input{cite/Hoffmann04}
+  \end{block}
+
+  \begin{block}{}
+    Variation : $G_a \wedge (G \vee \bigvee_{L} L)$ où $G_a$ est la conjonction des fluent du but déjà atteint.  
+  \end{block}
+\end{frame}
+
