@@ -1,20 +1,42 @@
-\section{Introduction}
+\section{Landmark revisited}
   \subsection*{blah}
 
 \begin{frame}
+  
   \begin{block}{}
+    \input{cite/Helmert08}
+  \end{block}
+
+  \begin{block}{LM \& ordre}
     \begin{itemize}
-      \item SAS\up{+}
-      \item Landmark heuristic
+      \item graphes de transitions de domaines SAS\up{+}
+      \item introduction d'ordre naturel $L → L'$ ($L'$ est vrai avant $L$ dans les plans où $L$ est vrai.
     \end{itemize}
 
-    \input{cite/Helmert08}
   \end{block}
 \end{frame}
 
 \begin{frame}
-  \begin{block}{}
+  \begin{block}{Landmark Heuristic}
+    $h = n - m + k$
+    \begin{itemize}
+      \item $n$ nombre total de landmark
+      \item $m$ nombre de landmark accepté (vrai dans l'état courant, et les LM ordonné avant était vrai dans l'état précedent)
+      \item $k$ nombre de landmark qui ont été accepté et qui sont de nouveau requis (greedy-necessary)
+    \end{itemize}
 
+    + prefered operators
   \end{block}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Résultats}
+
+  \begin{block}{}
+    \begin{itemize}
+      \item Meilleure qualité
+      \item Complete
+      \item Moins rapide pour les petites instances (génération des LM)
+    \end{itemize}
+  \end{block}
+\end{frame}
