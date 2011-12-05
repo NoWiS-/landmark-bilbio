@@ -5,6 +5,7 @@
 
 \usepackage[francais]{babel}
 
+\usepackage{bbding}
 \usepackage[ruled, vlined]{lib/algorithm2e}
 \usepackage{tikz}
 
@@ -58,6 +59,11 @@
 \date{\oldstylenums{\today}}
 \logo{\includegraphics[width=.25\textwidth]{images/onera.jpg}}
 
+%% --- Defining some customs commands ---
+\newcommand*\proitem{\item[\Checkmark]}
+\newcommand*\conitem{\item[\XSolidBrush]}
+\newcommand*\thusitem{\item[\Large$\Rightarrow$]}
+
 
 %% --- START OF THE DOCUMENT ---
 \begin{document}
@@ -71,7 +77,9 @@
 	\end{frame}
 
   \input{domshlak_ijcai/intro}
+  \input{domshlak_ijcai/costopt}
   \input{domshlak_ijcai/anyway}
+  \input{domshlak_ijcai/sound_complete}
 
 \end{document}
 

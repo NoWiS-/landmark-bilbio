@@ -16,10 +16,10 @@
       \item $L(s, \pi) = L \setminus \big(\text{Accepted}(s, \pi) \setminus \text{ReqAgain}(s, \pi)\big)$
       \item $\text{cost}(\phi)$, le coût minimum de l'action \emph{o} entre les actions qui produisent $\phi$ (\emph{divisé uniformément} par le nombre de Landmark que produit \emph{o})
     \end{itemize}
-    \alert{Admissible}
+    \alert{Admissible, Path-dependent}
   \end{block}
   
-  \begin{block}{Divison uniforme ?}
+  \begin{block}{Division uniforme ?}
     \begin{itemize}
       \proitem Facile, rapide
       \conitem Loin d'être optimal
@@ -28,6 +28,36 @@
 \end{frame}
 
 \begin{frame}
+  \begin{block}{Path dependent you said ?}
+    \begin{itemize}
+      \item Évaluation à chaque rencontre de l'état
+      \item Utilisation de la plus haute estimation
+      \thusitem Multi-path dependant : Pour chaque état \emph{s}, l'ensemble des landmarks acceptés est l'intersection de ceux acceptés par tous les chemins amenant à \emph{s} (LM-A*).
+    \end{itemize}
+  \end{block}
+\end{frame}
   
+\begin{frame}
+  \begin{block}{Action landmark}
+    \begin{displaymath}
+      h_{LA}(s, \pi) = cost(L_U(s, \pi)) + \sum_{a\in U(s, \pi)} \mathcal{C}(a)
+    \end{displaymath}
+
+    \begin{itemize}
+      \item avec $U(s, \pi)$ ensemble des actions landmark depuis s non présent dans \pi
+      \item avec $L_U(s, \pi) = L(s, \pi) \setminus \cup_{a \in U(s, \pi)} L(a | s, \pi)$, ensemble des landmarks atteignables immédiatement à partir de \emph{s} grâce à une action landmark.  
+      \item Somme des coûts des actions landmarks + le coût $h_L$ des autres L
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Résultats}
+    \begin{itemize}
+      \proitem $LM-A*<H_{LA}$ résout plus de tâche que $A*<H_{LA}$ (moins rapide pour les petites instances)
+      \item $H_{LA}$ explore en général moins de nœud que $H_{A}$, mais passe plus de temps sur chaque nœud (et prend un peu plus de temps au total).
+      \item Semble aussi bien que «flexible abstraction linear abstraction strategy» (LFPA)
+    \end{itemize}
+  \end{block}
 \end{frame}
 

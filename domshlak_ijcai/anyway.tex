@@ -1,10 +1,58 @@
-\section{Landmarks, Critical Paths and Abstractions: What's the Difference Anyway ?}
+\section{LM-Cut}
   \subsection*{blah}
 
 \begin{frame}
-  \begin{block}{Comment comparer les différentes heuristiques \emph{admissibles} ?}
+  \begin{block}{Comment comparer les différentes heuristiques \emph{admissibles}? (LM-Cut)}
     \input{cite/Domshlak09}  
-  
-
+    \input{cite/Domshlak11}
   \end{block}
 \end{frame}
+
+\begin{frame}
+  \frametitle{LM-Cut}
+
+  \begin{block}{}
+    \begin{itemize}
+      \item Landmark heuristic
+      \item cost-partitioning additive $h^{max}$
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Algo}
+    \begin{algorithm*}[H]
+      \footnotesize
+      \caption{LM-Cut}
+      \SetKwInOut{Input}{input}
+
+      \Input{$(A, O, I, G)$ une tâche de planification $P$, $s$ l'état à évaluer}
+
+      $h~←~h^{max}(s)$\;
+      \lIf{$(h = 0)\vee(h = \infty)$}{ \Return $h$ }
+      
+      $h~←~0$\;
+      \Repeat{$h^{max}(s) > 0$}{
+        $L~←$ Ensemble des Actions LM calculé avec $P^+$ (avec coût non nul)
+
+        $c~←~min_{l \in L} cost(l)$\;
+        $h~←~h~+~c$\;
+        \lFor{$l \in L$}{$cost(l)~←~cost(l) - c$\;}
+      }
+      \Return $h$\;
+
+
+    \end{algorithm*}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{A propos des actions landmarks}
+    \input{cite/Helmert10}
+  \end{block} 
+
+  \begin{block}{}
+    \begin{itemize}
+      \proitem Résout plus d'instant que $h^{LA}$
+    \end{itemize}
+  \end{block}
+\end{frame}
+

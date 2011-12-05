@@ -4,6 +4,7 @@
 \begin{frame}
   
   \begin{block}{}
+    LAMA-2008 (winner IPC2008 seq sat)
     \input{cite/Helmert08}
   \end{block}
 
@@ -18,11 +19,13 @@
 
 \begin{frame}
   \begin{block}{Landmark Heuristic}
-    $h = n - m + k$
+    $L(s, \pi) = L \setminus \big(\text{Accepted}(s, \pi) \setminus \text{ReqAgain}(s, \pi)\big)$
     \begin{itemize}
-      \item $n$ nombre total de landmark
-      \item $m$ nombre de landmark accepté (vrai dans l'état courant, et les LM ordonné avant était vrai dans l'état précedent)
-      \item $k$ nombre de landmark qui ont été accepté et qui sont de nouveau requis (greedy-necessary)
+      \item $L$ : Ensemble des landmarks
+      \item $\text{Accepted}(s, \pi)$ : Ensemble des landmarks vrai dans \emph{s} avec les LM «ordonnés avant» vrai dans l'état précèdent \emph{s} (depuis plan \pi).
+      \item $\text{ReqAgain}$ : Ensemble des landmark acceptés et de nouveau requis (greedy-necessary)
+      \item Valeur heuristique : $|L(s, \pi)|$
+      \item \alert{non admissible} (1 action peut achever plusieurs landmarks)
     \end{itemize}
 
     + prefered operators
