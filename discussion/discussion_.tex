@@ -1,10 +1,67 @@
+\section{Résumé}
+  \subsection*{blah}
 \begin{frame}
-  \begin{block}{Landmarks}
+  \frametitle{Découpage en sous-tâches}
+
+  \begin{block}{}
     \begin{itemize}
       \item Résolution exacte : PSPACE-Complet
       \item Relaxation : polynomial (mais très glouton, les plan sont plus long)
-
+      \item Boucle utilisant a planificateur classique en découpant la tâche grâce aux landmarks (but intermédiaire)
+    \end{itemize}
+      
       \input{cite/Hoffmann04}
+  \end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+  \frametitle{Heuristiques}
+
+  \begin{block}{Comptage des landmarks ($h_L$)}
+    \input{cite/Helmert08}
+  \end{block} 
+  
+  \begin{block}{Cost-partitioning (LM-A*)}
+    \input{cite/Domshlak09b}
+  \end{block}
+
+  \begin{block}{LM-Cut}
+    \input{cite/Domshlak09}
+    \input{cite/Domshlak11}
+  \end{block}
+
+  \begin{block}{Sound \& Complete}
+    \input{cite/Zhu03}
+    \input{cite/Keyder10}
+  \end{block}
+
+\end{frame}
+
+\section{Planners}
+  \subsection*{Planner}
+
+\begin{frame}
+  \frametitle{Planners utilisant des LM}
+  \begin{block}{Sat}
+    \begin{itemize}
+      \item BJOLP : LM-A*<$h_LA$>
+      \item LAMA (2008, 2011)
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Opt}
+    \begin{itemize}
+      \item LM-cut
+      \item LM-Fork
     \end{itemize}
   \end{block}
 \end{frame}
+
+\section{Quelques réf. supplémentaires...}
+  \subsection*{blah}
+\begin{frame}
+  \begin{block}{}
+    \input{cite/Richter10}  
+  \end{block}
+\end{frame}
+

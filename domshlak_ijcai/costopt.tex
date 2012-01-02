@@ -14,7 +14,7 @@
       où :
     \begin{itemize}
       \item $L(s, \pi) = L \setminus \big(\text{Accepted}(s, \pi) \setminus \text{ReqAgain}(s, \pi)\big)$
-      \item $\text{cost}(\phi)$, le coût minimum de l'action \emph{o} entre les actions qui produisent $\phi$ (\emph{divisé uniformément} par le nombre de Landmark que produit \emph{o})
+      \item $\text{cost}(\phi)$, le coût de l'action \emph{o}, action à coût minimal parmi les producteurs de  $\phi$ (\emph{divisé uniformément} par le nombre de LM que produit \emph{o})
     \end{itemize}
     \alert{Admissible, Path-dependent}
   \end{block}
@@ -28,10 +28,11 @@
 \end{frame}
 
 \begin{frame}
-  \begin{block}{Path dependent you said ?}
+  \frametitle{Path dependent you said ?}
+
+  \begin{block}{}
     \begin{itemize}
       \item Évaluation à chaque rencontre de l'état
-      \item Utilisation de la plus haute estimation
       \thusitem Multi-path dependant : Pour chaque état \emph{s}, l'ensemble des landmarks acceptés est l'intersection de ceux acceptés par tous les chemins amenant à \emph{s} (LM-A*).
     \end{itemize}
   \end{block}
@@ -54,8 +55,8 @@
 \begin{frame}
   \begin{block}{Résultats}
     \begin{itemize}
-      \proitem $LM-A*<H_{LA}$ résout plus de tâche que $A*<H_{LA}$ (moins rapide pour les petites instances)
-      \item $H_{LA}$ explore en général moins de nœud que $H_{A}$, mais passe plus de temps sur chaque nœud (et prend un peu plus de temps au total).
+      \proitem $\text{LM-A*}<H_{LA}>$ résout plus de tâche que $\text{A*}<H_{LA}>$ (moins rapide pour les petites instances)
+      \item $H_{LA}$ explore en général moins de nœud que $H_{L}$, mais passe plus de temps sur chaque nœud (et prend un peu plus de temps au total).
       \item Semble aussi bien que «flexible abstraction linear abstraction strategy» (LFPA)
     \end{itemize}
   \end{block}

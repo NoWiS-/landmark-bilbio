@@ -26,7 +26,7 @@
         \ForEach{$(L' \in C)$ tel que $level(L') \ne \emptyset$}{
           $A \leftarrow \{(\forall a \in A)~|~L' \in add(a)~\text{et}~level(a) = level(L) - 1\}$\;
           \ForEach{$L$ tel que $(\forall a \in A)~L \in pre(a)$}{
-            \uIf{$(L \in O) \notin LGG$}{
+            \uIf{$L \notin N$}{
               $C' \leftarrow C' \cup \{L\}$\;
               Insérer $L$ dans LGG\;
             }
@@ -44,7 +44,7 @@
 \begin{frame}
   \begin{block}{}
     On obtient pas forcément des landmarks ! (à cause de du test level RPG, ça enlève les actions non présente dans le RPG).
-    En fait, ça permet d'obtenir des pseudo-landmarks (il y en a plus). Pour une recheche heuristique, ça aide (mais est-ce que ça apporte vraiment plus qu'un simple RPG ?).
+    En fait, ça permet d'obtenir des pseudo-landmarks (il y en a plus). Pour une recherche heuristique, ça aide (mais est-ce que ça apporte vraiment plus qu'un simple RPG ?).
   \end{block}
 \end{frame}
 
@@ -54,7 +54,7 @@
   \frametitle{$L \rightarrow_r L'$}
 
   \begin{block}{}
-    Interférence entre 2 landmarks (en gros, des mutexes)
+    Interférence entre 2 landmarks $L$ et $L'$
   \end{block}
 
   \alt<1>{

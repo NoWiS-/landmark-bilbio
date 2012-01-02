@@ -2,7 +2,44 @@
   \subsection*{S \& C}
 \begin{frame}
   \begin{block}{}
+    \input{cite/Zhu03}
+  \end{block}
+
+  \begin{definition}[Causal Landmark]
+    Un fluent $f$ est un causal landmark si $f \in G$ ou si $(\forall P~\text{plan solution})(\exists a \in P) f \in pre(a)$
+  \end{definition}
+
+  \begin{block}{Algo}
+    \begin{itemize}
+      \item Forward Propagation dans le RPG
+      \item association d'un label à chaque niveau (fluent \& action) :
+        \begin{itemize}
+          \item Action : union des labels des préconditions
+          \item Fluent : intersection des labels des producteurs plus lui-même
+        \end{itemize}
+      \thusitem Les labels du but sont les landmarks de $\Pi^+$
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{De nouveau landmark issu de $\Pi^m$}
+
+  \begin{block}{}
     \input{cite/Keyder10}
   \end{block}
 
+  \begin{block}{Problème $\Pi^m$}
+    Les fluents du problèmes $\Pi^m$ sont un ensemble d'au maximum $m$ fluent du problème $\Pi$.
+
+    Chaque action $a$ de $\Pi$ donne un ensemble d'actions dans $\Pi^m$
+  \end{block}
+
+  \begin{block}{}
+    \begin{itemize}
+      \item Permet la génération de conjonction de landmarks
+    \end{itemize}
+  \end{block}
+
 \end{frame}
+

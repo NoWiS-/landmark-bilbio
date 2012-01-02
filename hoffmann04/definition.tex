@@ -52,7 +52,7 @@
   \end{definition}
 
   \begin{definition}[Aftermath]
-    $L'$ est un effet/une suite (in the aftermath) de $L$ si depuis tous les $s \in S_{(L', \lnot L)}$, $L$ devient vrai dans tous les plans solutions $P \in A^*~\text{tel que}~G\in Result(P, s)$.
+    $L'$ est un effet/une suite (in the aftermath) de $L$ si depuis tous les $s \in S_{(L', \lnot L)}$, $L$ devient vrai dans tous les plans solutions partant $s$. ($L'$ doit rester vrai avec $L$, ou après son apparition).
   \end{definition}
 
   \begin{definition}[$L \rightarrow_r L'$]
@@ -60,7 +60,7 @@
     \begin{equation*}
       \begin{cases}
         L'~\text{est un effet de}~L\\
-        (\forall s \in S_{(L', \lnot L)})(\forall P \in A^*~\text{achevant}~L) P~\text{supprime nécessairement}~L'
+        (\forall s \in S_{(L', \lnot L)})(\forall P \in A^*~\text{achevant}~L) P~\text{supprime et réachève}~L'
       \end{cases}
     \end{equation*}
   \end{definition}
